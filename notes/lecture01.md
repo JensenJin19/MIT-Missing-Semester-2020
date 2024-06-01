@@ -167,7 +167,7 @@ hello
 
 - `>`: The `>` symbol is used to redirect the standard output (stdout) *of a command to a file*. If the file already exists, it will be overwritten. If the file does not exist, it will be created.
 - `<`: The `<` symbol is used to redirect the standard input (stdin) *of a command from a file*.
-- Can also use `>>` to append to a file. Where this kind of input/output redirection really shines is in the use of pipes. The `|` operator **“chain”** programs such that the output of one is the input of another:
+- Can also use `>>` to **append to a file**. Where this kind of input/output redirection really shines is in the use of pipes. The `|` operator **“chain”** programs such that the output of one is the input of another:
 
 ```Bash
 missing:~$ ls -l / | tail -n1

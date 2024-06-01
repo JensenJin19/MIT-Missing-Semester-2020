@@ -18,9 +18,9 @@ Learning sequence:
 
 ```
 
-- [ ] [Lecture 1: Course overview + the shell](https://missing.csail.mit.edu/2020/course-shell/)
-  - Completion Date:
-  - Unresolved Parts:
+- [x] [Lecture 1: Course overview + the shell](https://missing.csail.mit.edu/2020/course-shell/)
+  - Completion Date: 2024-06-01
+  - Unresolved Parts: None
 
 - [ ] [Lecture 2: Shell Tools and Scripting](https://missing.csail.mit.edu/2020/shell-tools/)
   - Completion Date:
