@@ -1,4 +1,4 @@
-# The Shell
+# Course overview + the shell
 
 ## What is the shell
 
@@ -118,7 +118,7 @@ drwxr-xr-x 1 missing  users  4096 Jun 15  2019 missing
 
 `drwxr-xr-x`: `d` means `missing` is a directory
 
-`rwx/r-x/r-x`: Three groups of three characters indicate what permissions the owner of the file (`missing`) (文件所有者), the owning group (`users`) (用户组), and everyone (所有人) else respectively have on the relevant item. A `-` (dash) indicates that the given principal (主题) doesn't have the given permission.
+`rwx/r-x/r-x`: Three groups of three characters indicate what permissions the owner of the file (`missing`) (文件所有者), the owning group (`users`) (用户组), and everyone (所有人) else respectively have on the relevant item. A `-` (dash) indicates that the given principal (主体) doesn't have the given permission.
 
 - `r`: Read permissions on directory.
 - `w`: Modify permissions (i.e., add/reove files in directory).
@@ -138,7 +138,7 @@ Other handy programs:
 - `mv`: rename/move a file
 - `cp`: copy a file
 - `mkdir`: make a new directory
-- `man`: Take as an argument the name of a program, and shows its $manual page$. Press `q` to exit
+- `man`: Take as an argument the name of a program, and shows its `manual page`. Press `q` to exit
 
 ```Bash
 missing:~$ man ls
@@ -146,11 +146,14 @@ missing:~$ man ls
 
 ## Connecting programs
 
-In the shell, programs have two primary “streams” associated with them: their **input stream** and **their output stream**.
+In the shell, programs have two primary “streams” associated with them: their **input stream** and **their output stream**:
 
-When the program tries to read input, it reads from the input stream, and when it prints something, it prints to its output stream. 
+- When the program tries to read input, it reads from the input stream.
+- When it prints something, it prints to its output stream. 
 
-Normally, a program’s input and output are both your terminal. That is, your keyboard as input and your screen as output. However, we can also rewire (重定向) those streams!
+Normally, a program’s input and output are both your terminal. That is, **your keyboard as input and your screen as output**. However, we can also rewire (重定向) those streams!
+
+### `> file` and `< file`
 
 The simplest form of redirection is `< file` and `> file`. These let you rewire the input and output streams *of a program to a file* respectively:
 
@@ -165,7 +168,7 @@ missing:~$ cat hello2.txt
 hello
 ```
 
-- `>`: The `>` symbol is used to redirect the standard output (stdout) *of a command to a file*. If the file already exists, it will be overwritten. If the file does not exist, it will be created.
+- `>`: The `>` symbol is used to redirect the standard output (stdout) *of a command to a file*. **If the file already exists, it will be overwritten. If the file does not exist, it will be created.**
 - `<`: The `<` symbol is used to redirect the standard input (stdin) *of a command from a file*.
 - Can also use `>>` to **append to a file**. Where this kind of input/output redirection really shines is in the use of pipes. The `|` operator **“chain”** programs such that the output of one is the input of another:
 
@@ -176,7 +179,18 @@ missing:~$ curl --head --silent google.com | grep --ignore-case content-length |
 219
 ```
 
-`|`: Pipe `|` redirects the output of one command to the input of another.
+- `tail`: Output the last part of files (By default, shows the last 10 lines of a file)
+- `curl`: Transfer datas with URL
+- `grep`: Print lines that match patterns
+
+### Pipe `|`
+
+**`|`: Pipe `|` redirects the output of one command to the input of another.**
+
+The output of command1 becomes the input of command2 : 
+```
+command1 | command2
+```
 
 ## A versatile and powerful tool
 
